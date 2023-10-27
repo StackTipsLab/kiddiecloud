@@ -45,13 +45,14 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    
     steps:
-      - name: Install Node dependencies
+    - name: Install Node dependencies
       run: |
         npm install
-      - name: Analysing the code with pylint
+    - name: Analysing the code with pylint
       run: |
-        npm run build        
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        npm run build
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2
