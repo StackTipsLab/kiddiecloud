@@ -54,8 +54,11 @@ jobs:
         node-version: '21.x'
     - name: Install python2
       run: sudo apt update && DEBIAN_FRONTEND=noninteractive sudo apt install -y python2
-    - name: Test python2
-      run: python2 --version  
+    - name: Run Env TEst
+      run: |
+        python2 --version
+        node --version
+        npm --version
     - name: Install Node dependencies
       run: npm install
     - name: Building node modules
