@@ -52,6 +52,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '20.x'
+    - name: Install python2
+      run: sudo apt update && DEBIAN_FRONTEND=noninteractive sudo apt install -y python2
+    - name: Test python2
+      run: python2 --version  
     - name: Install Node dependencies
       run: npm install
     - name: Building node modules
