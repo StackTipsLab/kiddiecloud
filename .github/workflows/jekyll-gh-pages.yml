@@ -46,6 +46,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Install Node dependencies
+      run: |
+        npm install
+      - name: Analysing the code with pylint
+      run: |
+        npm run build        
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
