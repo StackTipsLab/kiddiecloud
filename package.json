@@ -1,0 +1,26 @@
+{
+  "name": "niandev",
+  "version": "1.0.0",
+  "description": "Site description",
+  "main": "css/main.sass",
+  "scripts": {
+    "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix",
+    "build-autoprefix": "postcss --use autoprefixer --output css/main.css css/main.css",
+    "build-clean": "rm css/main.css",
+    "build-sass": "node-sass --output-style compressed css/main.sass css/main.css",
+    "develop": "node-sass css/main.sass css/main.css",
+    "start": "npm run develop -- --watch"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "jekyll"
+  ],
+  "author": "Nilanchala Panigrahy <ask.nilan@gmail.com> (https://stacktips.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "node-sass": "^3.11.3",
+    "postcss-cli": "^2.6.0"
+  }
+}
