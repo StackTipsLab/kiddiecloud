@@ -63,12 +63,25 @@ template: index
         <strong>Collections:</strong>      
       <div class="container">
         <div class="index-left">
-          {% include components/finder.html %}
+
+         <ul>
+{% for org_hash in site.data.orgs %}
+{% assign org = org_hash[1] %}
+  <li>
+    <a href="https://github.com/{{ org.username }}">
+      {{ org.name }}
+    </a>
+    ({{ org.members | size }} members)
+  </li>
+{% endfor %}
+</ul>
+
+          {% comment %} {% include components/finder.html %} {% endcomment %}
         </div>
       </div>
     </main>
-    {% include sister.html %}
-    {% include modals/share.html %}
+    {% comment %} {% include sister.html %}
+    {% include modals/share.html %} {% endcomment %}
     {% include google-fonts.html %}
     <script src="{{site.url}}/javascript/clipboard.min.js"></script>
     <script src="{{site.url}}/javascript/main.js"></script>
